@@ -1,0 +1,6 @@
+digraph G { 
+rankdir=LR 
+ label="Tabla hash" 
+ node [shape=record,width=.01,height=.2, style=filled,fillcolor=cyan]
+node0 [label = "0)  hola  anuarios1  a422d1adb26062b4657c43af7ab33a40d7935c6d4c77ab453538792ec1f31e3e|1)  hola2  anuarios2  8d98e5e06e3c12cbadd45bc8bab5cd790a9e23d4e0ba4ce54b696f05bd6c8120|2)  hola3  anuarios3  72da7401845ac1f04aaaed94460dae1478c13618b88e86ab4f1b7ba0b62a6c2b|3)  admin  admin  8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918|4) -----|5) -----|6) -----|",height=.5];
+}
