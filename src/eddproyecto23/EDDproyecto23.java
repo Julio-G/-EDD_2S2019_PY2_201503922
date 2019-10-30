@@ -108,6 +108,7 @@ public class EDDproyecto23 extends JFrame{
         return hexString.toString();  
     } 
     public static void main(String[] args) throws NoSuchAlgorithmException {
+        
         int cont=0;
         char simbolo;
         int ascii=0;
@@ -120,6 +121,19 @@ public class EDDproyecto23 extends JFrame{
         lol.insertar(ascii,"admin","admin",toHexString(getSHA("admin")));
         EDDproyecto23 j=new EDDproyecto23();
         j.setVisible(true);
+        
+     /*   matriz jol = new matriz();
+        jol.insertar("nada","raiz");
+        jol.insertar("raiz","home");
+        jol.insertar("home","documents");
+        
+        jol.insertar("documents","usac");
+        jol.insertar("documents","vendor");
+        jol.insertar("vendor","view");
+        jol.graficar();
+        EDDproyecto23 j=new EDDproyecto23();
+        j.setVisible(true);*/
+        
     }
     
 }

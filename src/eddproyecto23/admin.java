@@ -23,9 +23,10 @@ import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 public class admin extends JFrame {
-    JLabel lbadmin;
+    JLabel lbadmin,lbbienvenida,lbreporte;
     JTextField txtcsv;
-    JButton btningresar;
+    JButton btningresar,btnreporte;
+    
     
     public admin(){
         super("EDD drive");
@@ -63,12 +64,19 @@ public class admin extends JFrame {
         return hexString.toString();  
     } 
     public void progra(){
+        Font fuente= new Font("Comic Sans MS",0,26);
+        lbbienvenida=new JLabel ("Carga Masiva");
+	lbbienvenida.setFont(fuente); 
+        lbbienvenida.setBounds(35,5,300,50);
+        lbreporte=new JLabel ("Reportes");
+	lbreporte.setFont(fuente); 
+        lbreporte.setBounds(35,155,300,50);
         lbadmin=new JLabel ("Nombre:");
-        lbadmin.setBounds(50,85,200,50);
+        lbadmin.setBounds(50,65,200,50);
         txtcsv = new JTextField();
-        txtcsv.setBounds(120,100,150,20);
+        txtcsv.setBounds(120,80,150,20);
         btningresar = new JButton("Ingresar");
-	btningresar.setBounds(110,140,100,20);
+	btningresar.setBounds(110,120,100,20);
 	btningresar.setBackground(Color.white);
         btningresar.addActionListener(new ActionListener()
 	{
@@ -115,8 +123,21 @@ public class admin extends JFrame {
                 System.out.println(hola);
             }
         });
+        btnreporte = new JButton("Reportes");
+	btnreporte.setBounds(110,210,110,30);
+	btnreporte.setBackground(Color.white);
+        btnreporte.addActionListener(new ActionListener()
+	{
+            @Override
+            public void actionPerformed(ActionEvent e){
+                
+            }
+        });
         add(btningresar);
         add(lbadmin);
         add(txtcsv);
+        add(lbbienvenida);
+        add(lbreporte);
+        add(btnreporte);
     }
 }

@@ -1,0 +1,48 @@
+digraph G {
+node[shape=record, style=filled];
+graph[pencolor=transparent]
+edge[color=black];
+MATRIZ[label="Matriz",pos="0,0!"];
+MATRIZ ->ndCraiz;
+ndCraiz [label = "raiz",fillcolor = orangered, pos="1.3,0!"];
+ndCraiz->ndChome[dir=both];
+ndChome [label = "home",fillcolor = orangered, pos="2.6,0!"];
+ndChome->ndCdocuments[dir=both];
+ndCdocuments [label = "documents",fillcolor = orangered, pos="3.9000000000000004,0!"];
+ndCdocuments->ndCusac[dir=both];
+ndCusac [label = "usac",fillcolor = orangered, pos="5.2,0!"];
+ndCusac->ndCvendor[dir=both];
+ndCvendor [label = "vendor",fillcolor = orangered, pos="6.5,0!"];
+ndCvendor->ndCview[dir=both];
+ndCview [label = "view",fillcolor = orangered, pos="7.800000000000001,0!"];
+
+MATRIZ ->ndFraiz;
+ndFraiz [label = "raiz",fillcolor = orangered, pos="0,-1!"];
+ndFraiz->ndFhome[dir=both];
+ndFhome [label = "home",fillcolor = orangered, pos="0,-2!"];
+ndFhome->ndFdocuments[dir=both];
+ndFdocuments [label = "documents",fillcolor = orangered, pos="0,-3!"];
+ndFdocuments->ndFusac[dir=both];
+ndFusac [label = "usac",fillcolor = orangered, pos="0,-4!"];
+ndFusac->ndFvendor[dir=both];
+ndFvendor [label = "vendor",fillcolor = orangered, pos="0,-5!"];
+ndFvendor->ndFview[dir=both];
+ndFview [label = "view",fillcolor = orangered, pos="0,-6!"];
+
+ndFraiz-> ndhomeFraiz[dir=both];
+ndhomeFraiz[label = "raiz\\home",fillcolor=gold, pos="2.6,-1!" ];
+ndFhome-> nddocumentsFhome[dir=both];
+nddocumentsFhome[label = "home\\documents",fillcolor=gold, pos="3.9000000000000004,-2!" ];
+ndFdocuments-> ndusacFdocuments[dir=both];
+ndusacFdocuments[label = "documents\\usac",fillcolor=gold, pos="5.2,-3!" ];
+ndusacFdocuments -> ndvendorFdocuments[dir=both];
+ndvendorFdocuments[label = "documents\\vendor",fillcolor=gold,  pos="6.5,-3!"];
+ndFvendor-> ndviewFvendor[dir=both];
+ndviewFvendor[label = "vendor\\view",fillcolor=gold, pos="7.800000000000001,-5!" ];
+ndChome-> ndhomeFraiz[dir=both];
+ndCdocuments-> nddocumentsFhome[dir=both];
+ndCusac-> ndusacFdocuments[dir=both];
+ndCvendor-> ndvendorFdocuments[dir=both];
+ndCview-> ndviewFvendor[dir=both];
+
+ }
