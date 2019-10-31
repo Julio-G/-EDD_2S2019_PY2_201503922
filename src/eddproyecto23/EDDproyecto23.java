@@ -23,6 +23,8 @@ public class EDDproyecto23 extends JFrame{
     JTextField Nsesion,Csesion;
     JButton btningresar,btnregistrar;
     public static hash lol= new hash();
+    public static matriz rese;
+    public static String hnom;
 
    public EDDproyecto23(){
         super("EDD drive");
@@ -57,6 +59,16 @@ public class EDDproyecto23 extends JFrame{
                 if(Nsesion.getText().equals("admin") && Csesion.getText().equals("admin")){
                     admin y= new admin();
                     y.setVisible(true);
+                }else{
+                    rese= lol.buscar(Nsesion.getText(), Csesion.getText());
+                    if(rese!=null){
+                        hnom=Nsesion.getText();
+                        usuario nuevo = new usuario();
+                        nuevo.setVisible(true);
+                    }else{
+                        JOptionPane.showMessageDialog(null,"Los datos no coinciden");
+                    }
+                    
                 }
             }
         });
@@ -118,11 +130,11 @@ public class EDDproyecto23 extends JFrame{
             ascii=ascii+(int)simbolo;
             cont++;
         }
-        lol.insertar(ascii,"admin","admin",toHexString(getSHA("admin")));
+        lol.insertar(ascii,"admin","admin",toHexString(getSHA("admin")),null);
         EDDproyecto23 j=new EDDproyecto23();
         j.setVisible(true);
         
-     /*   matriz jol = new matriz();
+      /*  matriz jol = new matriz();
         jol.insertar("nada","raiz");
         jol.insertar("raiz","home");
         jol.insertar("home","documents");

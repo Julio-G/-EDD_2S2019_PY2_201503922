@@ -55,11 +55,11 @@ public class hash {
           vectorh[i]=aux[i];
       }
   }
-  public void insertar(int k, String val,String val2,String val3){
+  public void insertar(int k, String val,String val2,String val3,matriz matrix){
       int f= funcionh(k);
       System.out.println(f);
       if(vectorh[f]==null){
-          vectorh[f]= new nodoh(k,val,val2,val3);
+          vectorh[f]= new nodoh(k,val,val2,val3,matrix);
           llenos+=1;
           pactual=calcularpactual();
           if(pactual>=porcentaje){
@@ -72,7 +72,7 @@ public class hash {
             if(funcionreh(k,iteracion)==f){
                 rehash();
             }
-            insertar(funcionreh(k,iteracion), val,val2,val3);
+            insertar(funcionreh(k,iteracion), val,val2,val3,matrix);
             iteracion=0;
           }else{
               System.out.println("El usuario "+val+" ya existe");
@@ -100,6 +100,18 @@ public class hash {
           }
          
       }
+  }
+  public matriz buscar(String nombre,String contraseña){
+      for(int i=0;i<vectorh.length;i++){
+          if(vectorh[i]!=null){
+              if(vectorh[i].nombre.equals(nombre)&&vectorh[i].contraseña.equals(contraseña)){
+                  return vectorh[i].matrix;
+              }
+             
+          }
+         
+      }
+      return null;
   }
   public void graficar2(){
       int cont=0;

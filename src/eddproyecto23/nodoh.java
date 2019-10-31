@@ -14,12 +14,14 @@ public class nodoh {
     String nombre;
     String contraseña;
     String encrip;
+    matriz matrix;
     
-    public nodoh(int key, String nombre,String contraseña,String encrip){
+    public nodoh(int key, String nombre,String contraseña,String encrip,matriz matrix){
         this.llave=key;
         this.nombre=nombre;
         this.contraseña=contraseña;
         this.encrip=encrip;
+        this.matrix=matrix;
     }
     public nodoh(){
         

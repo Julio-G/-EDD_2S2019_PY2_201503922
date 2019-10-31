@@ -104,7 +104,9 @@ public class admin extends JFrame {
                                 cont++;
                             }
                             String sha=toHexString(getSHA(codigo));
-                            EDDproyecto23.lol.insertar(ascii,nombre,codigo,sha);
+                            matriz pe = new matriz();
+                            pe.insertar("nada","raiz");
+                            EDDproyecto23.lol.insertar(ascii,nombre,codigo,sha,pe);
                         }   
                             
                           
@@ -130,7 +132,8 @@ public class admin extends JFrame {
 	{
             @Override
             public void actionPerformed(ActionEvent e){
-                
+                reportes kal = new reportes();
+                kal.setVisible(true);
             }
         });
         add(btningresar);

@@ -14,16 +14,19 @@ import java.io.PrintWriter;
  * @author Julio Garcia
  */
 public class matriz {
-    public static mnodo inicio=null;
-    public static mnodo ultimox=null;
-    public static mnodo ultimoy=null;
-    public static int x=1;
-    public static int y=1;
+    public  mnodo inicio=null;
+    public  mnodo ultimox=null;
+    public  mnodo ultimoy=null;
+    public  int x=1;
+    public  int y=1;
     public void insertar(String padre, String carpeta){
         if(inicio==null){
             mnodo nuevo1= new mnodo(padre,carpeta,null,null,null,null,x,0);
             mnodo nuevo2= new mnodo(padre,carpeta,null,null,null,null,0,y);
             mnodo nuevo3= new mnodo("inicio","inicio",nuevo1,null,null,nuevo2,0,0);
+            mnodo nuevo4= new mnodo(padre,carpeta,null,nuevo2,nuevo1,null,x,y);
+            nuevo1.abajo=nuevo4;
+            nuevo2.der=nuevo4;
             nuevo1.izq=nuevo3;
             nuevo2.arriba=nuevo3;
             ultimox=nuevo1;
@@ -82,7 +85,11 @@ public class matriz {
                 contenido+= "MATRIZ[label=\"Matriz\",pos=\"0,0!\"];\n";
                 contx++;
                 contenido+= "MATRIZ ->ndC"+aux1.carpeta+";\n";
-                contenido += "ndC" + aux1.carpeta + " [label = \""+aux1.carpeta+"\",fillcolor = orangered, pos=\""+(aux1.x*1.3)+",0!\"];\n";
+                if(aux1.carpeta.equals("raiz")){
+                    contenido += "ndC" + aux1.carpeta + " [label = \"\\\\\",fillcolor = orangered, pos=\""+(aux1.x*1.3)+",0!\"];\n";
+                }else{
+                    contenido += "ndC" + aux1.carpeta + " [label = \""+aux1.carpeta+"\",fillcolor = orangered, pos=\""+(aux1.x*1.3)+",0!\"];\n";
+                }
                 contx++;
                 while(aux1.der!=null){
                     
@@ -99,7 +106,11 @@ public class matriz {
                 
                 conty++;
                 contenido+= "MATRIZ ->ndF"+aux2.carpeta+";\n";
-                contenido += "ndF" + aux2.carpeta + " [label = \""+aux2.carpeta+"\",fillcolor = orangered, pos=\""+0+",-"+aux2.y+"!\"];\n";
+                if(aux2.carpeta.equals("raiz")){
+                    contenido += "ndF" + aux2.carpeta + " [label = \"\\\\\",fillcolor = orangered, pos=\""+0+",-"+aux2.y+"!\"];\n";
+                }else{
+                    contenido += "ndF" + aux2.carpeta + " [label = \""+aux2.carpeta+"\",fillcolor = orangered, pos=\""+0+",-"+aux2.y+"!\"];\n";
+                }
                 conty++;
                 while(aux2.abajo!=null){
                     
@@ -119,7 +130,11 @@ public class matriz {
                     aux1=aux2;
                     if(aux1.der!=null){
                         contenido += "ndF" +aux1.carpeta + "-> nd" +aux1.der.carpeta+"F"+aux1.der.padre+ "[dir=both];\n";
-			contenido += "nd" +aux1.der.carpeta +"F"+aux1.der.padre + "[label = \"" +aux1.der.padre+"\\\\"+aux1.der.carpeta + "\",fillcolor=gold, pos=\""+(aux1.der.x*1.3)+",-"+aux1.der.y+"!\" ];\n";
+                        if(aux1.der.carpeta.equals("raiz")){
+                            contenido += "nd" +aux1.der.carpeta +"F"+aux1.der.padre + "[label = \"\\\\\",fillcolor=gold, pos=\""+(aux1.der.x*1.3)+",-"+aux1.der.y+"!\" ];\n";
+                        }else{
+                            contenido += "nd" +aux1.der.carpeta +"F"+aux1.der.padre + "[label = \"" +aux1.der.padre+"\\\\"+aux1.der.carpeta + "\",fillcolor=gold, pos=\""+(aux1.der.x*1.3)+",-"+aux1.der.y+"!\" ];\n";
+                        }
                         contx++;
                         aux1=aux1.der;
                         while(aux1.der!=null){
