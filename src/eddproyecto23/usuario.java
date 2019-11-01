@@ -19,6 +19,10 @@ public class usuario extends JFrame{
     JButton btncrearc,btnsubirc,btncrearar,btnmasiva,btnreportes;
     JButton[] botones = new JButton[10];
     JPanel panel;
+    public static mnodo donde;
+    String []el=new String[20];
+    int cont=0;
+    
     public usuario(){
         super("USAC FILE DRIVE");
         setSize(800,550);
@@ -32,15 +36,15 @@ public class usuario extends JFrame{
         panel.setBounds(200,70,500,300);
         panel.setBackground(Color.white);
         
-        EDDproyecto23.rese.insertar("raiz","home");
-        EDDproyecto23.rese.insertar("home","documents");
-        pol();
         add(panel);
-        panel.repaint();
-        this.repaint();
+        pol();
+        
         mnodo cinicio=EDDproyecto23.rese.inicio;
-        cinicio=cinicio.abajo;
-        String link="";
+         while(cinicio.carpeta!=EDDproyecto23.carp){
+            cinicio=cinicio.abajo;
+        }
+        donde=cinicio;
+        String link=cinicio.carpeta;
         if(cinicio.carpeta.equals("raiz")){
             link="/";
         }
@@ -62,7 +66,10 @@ public class usuario extends JFrame{
 	{
             @Override
             public void actionPerformed(ActionEvent e){
-                
+                crearca folder = new crearca();
+                folder.setVisible(true);
+                setVisible(false);
+                dispose();
             }
          
 
@@ -74,7 +81,11 @@ public class usuario extends JFrame{
 	{
             @Override
             public void actionPerformed(ActionEvent e){
-                
+                EDDproyecto23.carp=donde.padre;
+                setVisible(false);
+                dispose();
+                usuario fo = new usuario();
+                fo.setVisible(true);
             }
          
 
@@ -136,13 +147,27 @@ public class usuario extends JFrame{
     }
     public void pol(){
         mnodo cinicio=EDDproyecto23.rese.inicio;
-        cinicio=cinicio.abajo;
-        int cont=0;
+        while(cinicio.carpeta!=EDDproyecto23.carp){
+            cinicio=cinicio.abajo;
+        }
+        cont=0;
         while(cinicio.der!=null){
-            if(!cinicio.der.carpeta.endsWith("raiz")){
-                botones[cont]= new JButton(cinicio.der.carpeta);
-                System.out.println(cinicio.der.carpeta);
-                panel.add(botones[cont]);
+            if(!cinicio.der.carpeta.equals("raiz")){
+             //   botones[cont]= new JButton(cinicio.der.carpeta);
+             
+                JButton boton = new JButton(cinicio.der.carpeta);
+                boton.addActionListener(new ActionListener()
+                {
+                    @Override
+                    public void actionPerformed(ActionEvent e){
+                        EDDproyecto23.carp=boton.getText();
+                        setVisible(false);
+                        dispose();
+                        usuario fo = new usuario();
+                        fo.setVisible(true);
+                    }
+                });
+                panel.add(boton);
                 cont++;
             }
             

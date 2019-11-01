@@ -25,6 +25,7 @@ public class EDDproyecto23 extends JFrame{
     public static hash lol= new hash();
     public static matriz rese;
     public static String hnom;
+    public static String carp="raiz";
 
    public EDDproyecto23(){
         super("EDD drive");
@@ -63,6 +64,7 @@ public class EDDproyecto23 extends JFrame{
                     rese= lol.buscar(Nsesion.getText(), Csesion.getText());
                     if(rese!=null){
                         hnom=Nsesion.getText();
+                        carp="raiz";
                         usuario nuevo = new usuario();
                         nuevo.setVisible(true);
                     }else{

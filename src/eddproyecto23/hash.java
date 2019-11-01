@@ -41,7 +41,7 @@ public class hash {
       return k % valrehash;
   }
   public int funcionreh(int k,int i){
-      return k+(int)Math.pow(i+1,2);
+      return k+(int)Math.pow(i,2);
   }
   public void rehash(){
       nodoh [] aux= new nodoh [valrehash];
@@ -54,10 +54,11 @@ public class hash {
       for(int i=0;i<aux.length;i++){
           vectorh[i]=aux[i];
       }
+      graficar();
   }
   public void insertar(int k, String val,String val2,String val3,matriz matrix){
       int f= funcionh(k);
-      System.out.println(f);
+      System.out.println(k+","+f+","+val);
       if(vectorh[f]==null){
           vectorh[f]= new nodoh(k,val,val2,val3,matrix);
           llenos+=1;
@@ -70,6 +71,9 @@ public class hash {
           if(existe(f,val)==1){
             iteracion++;
             if(funcionreh(k,iteracion)==f){
+                rehash();
+            }
+            if(iteracion>=vectorh.length){
                 rehash();
             }
             insertar(funcionreh(k,iteracion), val,val2,val3,matrix);
@@ -92,6 +96,7 @@ public class hash {
       return 1;
   }
   public void graficar(){
+       System.out.println("----------------------------");
       for(int i=0;i<vectorh.length;i++){
           if(vectorh[i]!=null){
               System.out.println(vectorh[i].llave+","+vectorh[i].nombre+","+vectorh[i].contraseña);
@@ -100,6 +105,7 @@ public class hash {
           }
          
       }
+      System.out.println("----------------------------");
   }
   public matriz buscar(String nombre,String contraseña){
       for(int i=0;i<vectorh.length;i++){
