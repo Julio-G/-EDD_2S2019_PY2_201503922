@@ -11,10 +11,11 @@ package eddproyecto23;
  */
 public class anodo {
     public String archivo,contenido;
-    public int eq=1,alt=0;
+    public int eq=1,alt=0,archivo2;
     public anodo der,izq;
     
-    public anodo(String archivo,String contenido,anodo der,anodo izq){
+    public anodo(int archivo2,String archivo,String contenido,anodo der,anodo izq){
+        this.archivo2=archivo2;
         this.archivo=archivo;
         this.contenido=contenido;
         this.der=der;
