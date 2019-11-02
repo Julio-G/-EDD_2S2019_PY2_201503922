@@ -18,8 +18,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 public class reportes extends JFrame{
-    JButton btnhash,btnmatriz;
-    JLabel lbhash,lbimagen,lbmatriz;
+    JButton btnhash,btnmatriz,btnavl;
+    JLabel lbhash,lbimagen,lbmatriz,lbavl;
     public reportes(){
         super("EDD drive");
         setSize(1200,700);
@@ -86,7 +86,40 @@ public class reportes extends JFrame{
                 
                 ImageIcon icon= new ImageIcon("matriz.png");
                 Image img = icon.getImage() ;  
-                Image newimg = img.getScaledInstance( 950, 620,  java.awt.Image.SCALE_SMOOTH ) ; 
+                Image newimg = img.getScaledInstance( 950, 620, java.awt.Image.SCALE_SMOOTH ) ; 
+                icon = new ImageIcon( newimg );
+                lbimagen.setIcon(icon);
+                lbimagen.setBounds(200,10,950,620);
+                lbimagen.setVisible(true);
+                lbimagen.repaint();
+            }
+
+        });
+        lbavl=new JLabel ("Arbol AVL");
+	lbavl.setFont(fuente); 
+        lbavl.setBounds(15,215,300,50);
+        btnavl = new JButton("matriz");
+	btnavl.setBounds(15,275,110,30);
+	btnavl.setBackground(Color.white);
+        btnavl.addActionListener(new ActionListener()
+	{
+            @Override
+            public void actionPerformed(ActionEvent e){
+                mnodo cinicio=EDDproyecto23.rese.inicio;
+                while(cinicio.carpeta!=EDDproyecto23.carp){
+                    cinicio=cinicio.der;
+                }
+                cinicio=cinicio.abajo;
+                cinicio.arbol.agraficar(cinicio.carpeta);
+                try {
+                    Thread.sleep(1);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(reportes.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                ImageIcon icon= new ImageIcon("avl.png");
+                Image img = icon.getImage() ;  
+                Image newimg = img.getScaledInstance( 950, 620, java.awt.Image.SCALE_SMOOTH ) ; 
                 icon = new ImageIcon( newimg );
                 lbimagen.setIcon(icon);
                 lbimagen.setBounds(200,10,950,620);
@@ -100,6 +133,8 @@ public class reportes extends JFrame{
         add(btnhash);
         add(btnmatriz);
         add(lbmatriz);
+        add(lbavl);
+        add(btnavl);
         
         
     }

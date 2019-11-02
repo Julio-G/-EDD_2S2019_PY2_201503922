@@ -18,6 +18,7 @@ public class avl {
     public String run="";
     public anodo insertar(anodo raiz,int archivo2,String archivo,String contenido){
         if(raiz==null){ 
+            
             anodo nuevo=new anodo(archivo2,archivo,contenido,null,null);
             return nuevo;
         }
@@ -54,7 +55,7 @@ public class avl {
         }
         
     }
-    anodo derrot(anodo raiz){
+    public anodo derrot(anodo raiz){
   
         anodo raiz2 = raiz.izq ;
         anodo temporal2 = raiz2.der;
@@ -67,7 +68,7 @@ public class avl {
   
         return raiz2;
     }
-    anodo izqrot(anodo raiz){
+    public anodo izqrot(anodo raiz){
   
         anodo raiz2 = raiz.der; 
         anodo temporal = raiz2.izq; 
@@ -80,21 +81,21 @@ public class avl {
   
         return raiz2;
     }
-    int equilibrio(anodo no){
+    public int equilibrio(anodo no){
         if (no !=null){
             return no.eq;
         }else{
             return 0;
         }
     }
-    int maximo(int x, int y){
+    public int maximo(int x, int y){
         if(y<x){
             return x;
         }else{
             return y;
         }
     }
-    int diferencia(anodo no){
+    public int diferencia(anodo no){
         if (no !=null){
             return equilibrio(no.izq) - equilibrio(no.der);
         }else{
@@ -157,16 +158,16 @@ public class avl {
     
         if (avl.der==null && avl.izq==null){
 
-            run=run+" node"+avl.archivo+avl.archivo2+" [style=filled fillcolor=blue  label=\"Nombre: "+avl.archivo +"\\n contenido:"+avl.contenido+"\\n Altura: "+(avl.eq-1)+"\\n FE : "+avl.alt+"\\n Propietario: "+prop+"\"]\n";
+            run=run+" node"+avl.archivo.replace(".","")+avl.archivo2+" [style=filled fillcolor=blue  label=\"Nombre: "+avl.archivo +"\\n contenido:"+avl.contenido+"\\n Altura: "+(avl.eq-1)+"\\n FE : "+avl.alt+"\\n Propietario: "+prop+"\"]\n";
     
         }else{
             if (avl.izq!=null){
 
-                run=run+" node"+avl.archivo+avl.archivo2+" [fillcolor=blue label=\"<C0>|Nombre:"+avl.archivo+"\\n contenido:"+avl.contenido+"\\n Altura: "+(avl.eq-1)+"\\n FE : "+(avl.alt)+"\\n Propietario: "+prop+"|<C1>\"] node"+avl.archivo+avl.archivo2+":C0->node"+avl.izq.archivo+avl.izq.archivo2+":C1\n";
+                run=run+" node"+avl.archivo.replace(".","")+avl.archivo2+" [fillcolor=blue label=\"<C0>|Nombre:"+avl.archivo+"\\n contenido:"+avl.contenido+"\\n Altura: "+(avl.eq-1)+"\\n FE : "+(avl.alt)+"\\n Propietario: "+prop+"|<C1>\"] node"+avl.archivo.replace(".","")+avl.archivo2+":C0->node"+avl.izq.archivo.replace(".","")+avl.izq.archivo2+":C1\n";
                 graficar(avl.izq,prop);
             }
             if (avl.der!=null){
-                run=run+" node"+avl.archivo+avl.archivo2+" [fillcolor=blue label=\"<C0>|Nombre:"+avl.archivo+"\\n contenido:"+avl.contenido+"\\n Altura: "+(avl.eq-1)+"\\n FE : "+(avl.alt)+"\\n Propietario: "+prop+"|<C1>\"] node"+avl.archivo+avl.archivo2+":C1->node"+avl.der.archivo+avl.der.archivo2+":C0\n";
+                run=run+" node"+avl.archivo.replace(".","")+avl.archivo2+" [fillcolor=blue label=\"<C0>|Nombre:"+avl.archivo+"\\n contenido:"+avl.contenido+"\\n Altura: "+(avl.eq-1)+"\\n FE : "+(avl.alt)+"\\n Propietario: "+prop+"|<C1>\"] node"+avl.archivo.replace(".","")+avl.archivo2+":C1->node"+avl.der.archivo.replace(".","")+avl.der.archivo2+":C0\n";
                 graficar(avl.der,prop);
             }
         }

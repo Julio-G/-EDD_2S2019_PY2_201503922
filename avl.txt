@@ -1,12 +1,7 @@
 digraph G {  node [shape=record, color=blue]
- node201403525201403525 [fillcolor=blue label="<C0>|Nombre:201403525\n contenido:contenido\n Altura: 2\n FE : 0\n Propietario: john|<C1>"] node201403525201403525:C0->node201212963201212963:C1
- node201212963201212963 [fillcolor=blue label="<C0>|Nombre:201212963\n contenido:contenido1\n Altura: 1\n FE : -2\n Propietario: john|<C1>"] node201212963201212963:C0->node201005874201005874:C1
- node201005874201005874 [style=filled fillcolor=blue  label="Nombre: 201005874\n contenido:contenido2\n Altura: 0\n FE : -2\n Propietario: john"]
- node201212963201212963 [fillcolor=blue label="<C0>|Nombre:201212963\n contenido:contenido1\n Altura: 1\n FE : -2\n Propietario: john|<C1>"] node201212963201212963:C1->node201313526201313526:C0
- node201313526201313526 [style=filled fillcolor=blue  label="Nombre: 201313526\n contenido:contenido3\n Altura: 0\n FE : 0\n Propietario: john"]
- node201403525201403525 [fillcolor=blue label="<C0>|Nombre:201403525\n contenido:contenido\n Altura: 2\n FE : 0\n Propietario: john|<C1>"] node201403525201403525:C1->node201403819201403819:C0
- node201403819201403819 [fillcolor=blue label="<C0>|Nombre:201403819\n contenido:contenido4\n Altura: 1\n FE : 1\n Propietario: john|<C1>"] node201403819201403819:C0->node201403624201403624:C1
- node201403624201403624 [style=filled fillcolor=blue  label="Nombre: 201403624\n contenido:contenido5\n Altura: 0\n FE : 0\n Propietario: john"]
- node201403819201403819 [fillcolor=blue label="<C0>|Nombre:201403819\n contenido:contenido4\n Altura: 1\n FE : 1\n Propietario: john|<C1>"] node201403819201403819:C1->node201602255201602255:C0
- node201602255201602255 [style=filled fillcolor=blue  label="Nombre: 201602255\n contenido:contenido6\n Altura: 0\n FE : 2\n Propietario: john"]
+ nodeHeaderh735 [fillcolor=blue label="<C0>|Nombre:Header.h\n contenido:cabecera\n Altura: 2\n FE : -1\n Propietario: gal1|<C1>"] nodeHeaderh735:C0->nodeMainpy668:C1
+ nodeMainpy668 [style=filled fillcolor=blue  label="Nombre: Main.py\n contenido:python script\n Altura: 0\n FE : -2\n Propietario: gal1"]
+ nodeHeaderh735 [fillcolor=blue label="<C0>|Nombre:Header.h\n contenido:cabecera\n Altura: 2\n FE : -1\n Propietario: gal1|<C1>"] nodeHeaderh735:C1->nodeholatxt818:C0
+ nodeholatxt818 [fillcolor=blue label="<C0>|Nombre:hola.txt\n contenido:hola mundo\n Altura: 1\n FE : -1\n Propietario: gal1|<C1>"] nodeholatxt818:C1->nodechromeexe1006:C0
+ nodechromeexe1006 [style=filled fillcolor=blue  label="Nombre: chrome.exe\n contenido:ejecutable\n Altura: 0\n FE : 0\n Propietario: gal1"]
 }

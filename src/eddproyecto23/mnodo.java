@@ -18,8 +18,9 @@ public class mnodo {
     public String padre;
     public int x;
     public int y;
+    public avl arbol;
     
-    public mnodo(String padre,String carpeta, mnodo der, mnodo izq,mnodo arriba,mnodo abajo,int x, int y){
+    public mnodo(String padre,String carpeta, mnodo der, mnodo izq,mnodo arriba,mnodo abajo,int x, int y, avl arbol){
         this.der=der;
         this.izq=izq;
         this.arriba=arriba;
@@ -28,5 +29,6 @@ public class mnodo {
         this.carpeta=carpeta;
         this.x=x;
         this.y=y;
+        this.arbol=arbol;
     }
 }

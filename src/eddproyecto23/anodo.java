@@ -10,7 +10,7 @@ package eddproyecto23;
  * @author Julio Garcia
  */
 public class anodo {
-    public String archivo,contenido;
+    public String archivo="",contenido="";
     public int eq=1,alt=0,archivo2;
     public anodo der,izq;
     
@@ -20,5 +20,8 @@ public class anodo {
         this.contenido=contenido;
         this.der=der;
         this.izq=izq;
+    }
+    public anodo(){
+        
     }
 }

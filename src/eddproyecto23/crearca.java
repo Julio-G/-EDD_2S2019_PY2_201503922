@@ -41,7 +41,8 @@ public class crearca extends JFrame{
 	{
             @Override
             public void actionPerformed(ActionEvent e){
-                EDDproyecto23.rese.insertar(usuario.donde.carpeta,txtcsv.getText());
+                avl ar= new avl();
+                EDDproyecto23.rese.insertar(usuario.donde.carpeta,txtcsv.getText(),ar);
                 usuario pos = new usuario();
                 pos.setVisible(true);
                 setVisible(false);

@@ -105,7 +105,8 @@ public class admin extends JFrame {
                             }
                             String sha=toHexString(getSHA(codigo));
                             matriz pe = new matriz();
-                            pe.insertar("nada","raiz");
+                            avl ra = new avl();
+                            pe.insertar("nada","raiz",ra);
                             EDDproyecto23.lol.insertar(ascii,nombre,codigo,sha,pe);
                         }   
                             

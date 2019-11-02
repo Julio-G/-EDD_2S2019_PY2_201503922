@@ -11,6 +11,7 @@ package eddproyecto23;
  */
 import java.awt.Color;
 import java.awt.Font;
+import com.csvreader.CsvReader;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -40,7 +41,7 @@ public class usuario extends JFrame{
         pol();
         
         mnodo cinicio=EDDproyecto23.rese.inicio;
-         while(cinicio.carpeta!=EDDproyecto23.carp){
+        while(cinicio.carpeta!=EDDproyecto23.carp){
             cinicio=cinicio.abajo;
         }
         donde=cinicio;
@@ -112,7 +113,8 @@ public class usuario extends JFrame{
 	{
             @Override
             public void actionPerformed(ActionEvent e){
-                
+                cmasiva jo = new cmasiva();
+                jo.setVisible(true);
             }
          
 
@@ -127,6 +129,7 @@ public class usuario extends JFrame{
 	{
             @Override
             public void actionPerformed(ActionEvent e){
+                
                 reportes dol=new reportes();
                 dol.setVisible(true);
             }

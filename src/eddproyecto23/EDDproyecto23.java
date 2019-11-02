@@ -122,7 +122,7 @@ public class EDDproyecto23 extends JFrame{
         return hexString.toString();  
     } 
     public static void main(String[] args) throws NoSuchAlgorithmException {
-      /*  
+        
         int cont=0;
         char simbolo;
         int ascii=0;
@@ -134,7 +134,7 @@ public class EDDproyecto23 extends JFrame{
         }
         lol.insertar(ascii,"admin","admin",toHexString(getSHA("admin")),null);
         EDDproyecto23 j=new EDDproyecto23();
-        j.setVisible(true);*/
+        j.setVisible(true);
         
       /*  matriz jol = new matriz();
         jol.insertar("nada","raiz");
@@ -147,8 +147,8 @@ public class EDDproyecto23 extends JFrame{
         jol.graficar();
         EDDproyecto23 j=new EDDproyecto23();
         j.setVisible(true);*/
-      /*
-       avl que= new avl();
+      
+     /*  avl que= new avl();
        
        que.inicio=que.insertar(que.inicio,201005874,"201005874","contenido2");
        que.inicio=que.insertar(que.inicio,201403525,"201403525","contenido");
@@ -158,7 +158,7 @@ public class EDDproyecto23 extends JFrame{
        que.inicio=que.insertar(que.inicio,201403819,"201403819","contenido4");
        que.inicio=que.insertar(que.inicio,201403624,"201403624","contenido5");
        
-       que.agraficar("john");
+       que.agraficar(que.inicio,"john");
        EDDproyecto23 j=new EDDproyecto23();
        j.setVisible(true);*/
         

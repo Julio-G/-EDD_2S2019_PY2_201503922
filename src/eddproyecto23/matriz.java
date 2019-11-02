@@ -19,12 +19,12 @@ public class matriz {
     public  mnodo ultimoy=null;
     public  int x=1;
     public  int y=1;
-    public void insertar(String padre, String carpeta){
+    public void insertar(String padre, String carpeta,avl ar){
         if(inicio==null){
-            mnodo nuevo1= new mnodo(padre,carpeta,null,null,null,null,x,0);
-            mnodo nuevo2= new mnodo(padre,carpeta,null,null,null,null,0,y);
-            mnodo nuevo3= new mnodo("inicio","inicio",nuevo1,null,null,nuevo2,0,0);
-            mnodo nuevo4= new mnodo(padre,carpeta,null,nuevo2,nuevo1,null,x,y);
+            mnodo nuevo1= new mnodo(padre,carpeta,null,null,null,null,x,0,ar);
+            mnodo nuevo2= new mnodo(padre,carpeta,null,null,null,null,0,y,ar);
+            mnodo nuevo3= new mnodo("inicio","inicio",nuevo1,null,null,nuevo2,0,0,ar);
+            mnodo nuevo4= new mnodo(padre,carpeta,null,nuevo2,nuevo1,null,x,y,ar);
             nuevo1.abajo=nuevo4;
             nuevo2.der=nuevo4;
             nuevo1.izq=nuevo3;
@@ -35,9 +35,9 @@ public class matriz {
             x++;
             y++;
         }else{
-            mnodo nuevo1= new mnodo(padre,carpeta,null,ultimox,null,null,x,0);
-            mnodo nuevo2= new mnodo(padre,carpeta,null,null,ultimoy,null,0,y);
-            mnodo nuevo3= new mnodo(padre,carpeta,null,null,nuevo1,null,x,0);
+            mnodo nuevo1= new mnodo(padre,carpeta,null,ultimox,null,null,x,0,null);
+            mnodo nuevo2= new mnodo(padre,carpeta,null,null,ultimoy,null,0,y,null);
+            mnodo nuevo3= new mnodo(padre,carpeta,null,null,nuevo1,null,x,0,ar);
             x++;
             y++;
             nuevo1.abajo=nuevo3;
