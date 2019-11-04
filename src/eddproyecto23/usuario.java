@@ -39,7 +39,7 @@ public class usuario extends JFrame{
         
         add(panel);
         pol();
-        
+        pol2();
         mnodo cinicio=EDDproyecto23.rese.inicio;
         while(cinicio.carpeta!=EDDproyecto23.carp){
             cinicio=cinicio.abajo;
@@ -115,6 +115,8 @@ public class usuario extends JFrame{
             public void actionPerformed(ActionEvent e){
                 cmasiva jo = new cmasiva();
                 jo.setVisible(true);
+                setVisible(false);
+                dispose();
             }
          
 
@@ -159,6 +161,7 @@ public class usuario extends JFrame{
              //   botones[cont]= new JButton(cinicio.der.carpeta);
              
                 JButton boton = new JButton(cinicio.der.carpeta);
+                boton.setBackground(Color.yellow);
                 boton.addActionListener(new ActionListener()
                 {
                     @Override
@@ -176,6 +179,34 @@ public class usuario extends JFrame{
             
             cinicio=cinicio.der;
         }
+    }
+    public void pol2(){
+        mnodo cinicio=EDDproyecto23.rese.inicio;
+        while(cinicio.carpeta!=EDDproyecto23.carp){
+            cinicio=cinicio.der;
+        }
+        cinicio=cinicio.abajo;
+        if(cinicio.arbol.inicio!=null){
+            preorden(cinicio.arbol.inicio);
+        }
+        
+    }
+    public void preorden(anodo pal){
+        if(pal!=null){
+            JButton boton = new JButton(pal.archivo);
+            boton.setBackground(Color.green);
+            boton.addActionListener(new ActionListener()
+            {
+                @Override
+                public void actionPerformed(ActionEvent e){
+                    
+                }
+            });
+            panel.add(boton);
+            preorden(pal.izq);
+            preorden(pal.der);
+        }
+        
     }
      
 }

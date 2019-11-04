@@ -78,6 +78,10 @@ public class cmasiva extends JFrame {
                 } catch (IOException ev) {
                     ev.printStackTrace();
                 }
+                usuario pos = new usuario();
+                pos.setVisible(true);
+                setVisible(false);
+                dispose();
                 
             }
         });
