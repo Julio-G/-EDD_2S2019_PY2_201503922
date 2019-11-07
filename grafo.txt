@@ -1,0 +1,27 @@
+digraph G {
+node[shape=record, style=filled];
+graph[pencolor=transparent]
+edge[color=black];
+ndraiz [label = "\\",fillcolor = yellow];
+ndraiz [label = "\\ \n Carpetas: 1",fillcolor =yellow];
+ndraiz->ndbal1;
+ndraiz [label = "\\ \n Carpetas: 2",fillcolor =yellow];
+ndraiz->ndbal2;
+ndraiz [label = "\\ \n Carpetas: 3",fillcolor =yellow];
+ndraiz->ndbal3;
+ndbal1 [label = "bal1",fillcolor = orangered];
+ndbal1 [label = "bal1\n Carpetas: 1",fillcolor = orangered];
+ndbal1->ndsah1;
+ndbal1 [label = "bal1\n Carpetas: 2",fillcolor = orangered];
+ndbal1->ndsah2;
+ndbal2 [label = "bal2",fillcolor = orangered];
+ndbal3 [label = "bal3",fillcolor = orangered];
+ndbal3 [label = "bal3\n Carpetas: 1",fillcolor = orangered];
+ndbal3->ndms1;
+ndbal3 [label = "bal3\n Carpetas: 2",fillcolor = orangered];
+ndbal3->ndms2;
+ndsah1 [label = "sah1",fillcolor = orangered];
+ndsah2 [label = "sah2",fillcolor = orangered];
+ndms1 [label = "ms1",fillcolor = orangered];
+ndms2 [label = "ms2",fillcolor = orangered];
+}

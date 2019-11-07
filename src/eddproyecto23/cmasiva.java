@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.sql.Timestamp;
 public class cmasiva extends JFrame {
     JLabel lbbienvenida;
     JButton btningresar;
@@ -70,7 +71,8 @@ public class cmasiva extends JFrame {
                             ascii=ascii+(int)simbolo;
                             cont++;
                         }
-                        cinicio.arbol.inicio=cinicio.arbol.insertar(cinicio.arbol.inicio,ascii,nombre,codigo);
+                        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+                        cinicio.arbol.inicio=cinicio.arbol.insertar(cinicio.arbol.inicio,ascii,nombre,codigo,timestamp.toString());
                     }   
                     ag.close();
                 } catch (FileNotFoundException ev) {

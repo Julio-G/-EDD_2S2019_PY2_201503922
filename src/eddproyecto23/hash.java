@@ -56,11 +56,11 @@ public class hash {
       }
       graficar();
   }
-  public void insertar(int k, String val,String val2,String val3,matriz matrix){
+  public void insertar(int k, String val,String val2,String val3,matriz matrix,String tiempo){
       int f= funcionh(k);
       System.out.println(k+","+f+","+val);
       if(vectorh[f]==null){
-          vectorh[f]= new nodoh(k,val,val2,val3,matrix);
+          vectorh[f]= new nodoh(k,val,val2,val3,matrix,tiempo);
           llenos+=1;
           pactual=calcularpactual();
           if(pactual>=porcentaje){
@@ -76,7 +76,7 @@ public class hash {
             if(iteracion>=vectorh.length){
                 rehash();
             }
-            insertar(funcionreh(k,iteracion), val,val2,val3,matrix);
+            insertar(funcionreh(k,iteracion), val,val2,val3,matrix,tiempo);
             iteracion=0;
           }else{
               System.out.println("El usuario "+val+" ya existe");
@@ -126,7 +126,7 @@ public class hash {
       run+="node0 [label = \"";
        for(int i=0;i<vectorh.length;i++){
           if(vectorh[i]!=null){
-             run+=cont+")       Nombre: "+vectorh[i].nombre+"  Contraseña:"+vectorh[i].contraseña+"  Encriptada: "+vectorh[i].encrip+"|";
+             run+=cont+")       Nombre: "+vectorh[i].nombre+"  Contraseña:"+vectorh[i].contraseña+"  Encriptada: "+vectorh[i].encrip+"  Timestamp: "+vectorh[i].tiempo+"|";
           }else{
               run+=cont+") -----|";
               

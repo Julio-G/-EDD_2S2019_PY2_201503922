@@ -18,8 +18,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 public class reportes extends JFrame{
-    JButton btnhash,btnmatriz,btnavl;
-    JLabel lbhash,lbimagen,lbmatriz,lbavl;
+    JButton btnhash,btnmatriz,btnavl,btngrafo;
+    JLabel lbhash,lbimagen,lbmatriz,lbavl,lbgrafo;
     public reportes(){
         super("EDD drive");
         setSize(1200,700);
@@ -98,7 +98,7 @@ public class reportes extends JFrame{
         lbavl=new JLabel ("Arbol AVL");
 	lbavl.setFont(fuente); 
         lbavl.setBounds(15,215,300,50);
-        btnavl = new JButton("matriz");
+        btnavl = new JButton("AVL");
 	btnavl.setBounds(15,275,110,30);
 	btnavl.setBackground(Color.white);
         btnavl.addActionListener(new ActionListener()
@@ -128,6 +128,37 @@ public class reportes extends JFrame{
             }
 
         });
+        lbgrafo=new JLabel ("Grafo");
+	lbgrafo.setFont(fuente); 
+        lbgrafo.setBounds(15,320,300,50);
+        btngrafo = new JButton("Grafo");
+	btngrafo.setBounds(15,380,110,30);
+	btngrafo.setBackground(Color.white);
+        btngrafo.addActionListener(new ActionListener()
+	{
+            @Override
+            public void actionPerformed(ActionEvent e){
+               EDDproyecto23.rese.graficar2();
+               
+                try {
+                    Thread.sleep(1);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(reportes.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                
+                
+                ImageIcon icon= new ImageIcon("grafo.png");
+                Image img = icon.getImage() ;  
+                Image newimg = img.getScaledInstance( 950, 620, java.awt.Image.SCALE_SMOOTH ) ; 
+                icon = new ImageIcon( newimg );
+                lbimagen.setIcon(icon);
+                lbimagen.setBounds(200,10,950,620);
+                lbimagen.setVisible(true);
+                lbimagen.repaint();
+            }
+
+        });
         add(lbhash);
         add(lbimagen);
         add(btnhash);
@@ -135,6 +166,9 @@ public class reportes extends JFrame{
         add(lbmatriz);
         add(lbavl);
         add(btnavl);
+        add(lbgrafo);
+        add(btngrafo);
+        
         
         
     }

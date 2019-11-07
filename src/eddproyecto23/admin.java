@@ -22,6 +22,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.sql.Timestamp;
 public class admin extends JFrame {
     JLabel lbadmin,lbbienvenida,lbreporte;
     JTextField txtcsv;
@@ -107,7 +108,8 @@ public class admin extends JFrame {
                             matriz pe = new matriz();
                             avl ra = new avl();
                             pe.insertar("nada","raiz",ra);
-                            EDDproyecto23.lol.insertar(ascii,nombre,codigo,sha,pe);
+                            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+                            EDDproyecto23.lol.insertar(ascii,nombre,codigo,sha,pe,timestamp.toString());
                         }   
                             
                           

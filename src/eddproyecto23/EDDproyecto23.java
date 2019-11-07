@@ -17,6 +17,7 @@ import java.math.BigInteger;
 import java.nio.charset.StandardCharsets; 
 import java.security.MessageDigest;  
 import java.security.NoSuchAlgorithmException;
+import java.sql.Timestamp;
 public class EDDproyecto23 extends JFrame{
     
     JLabel lbbienvenida,lbnombre,lbcontra;
@@ -132,7 +133,8 @@ public class EDDproyecto23 extends JFrame{
             ascii=ascii+(int)simbolo;
             cont++;
         }
-        lol.insertar(ascii,"admin","admin",toHexString(getSHA("admin")),null);
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        lol.insertar(ascii,"admin","admin",toHexString(getSHA("admin")),null,timestamp.toString());
         EDDproyecto23 j=new EDDproyecto23();
         j.setVisible(true);
         

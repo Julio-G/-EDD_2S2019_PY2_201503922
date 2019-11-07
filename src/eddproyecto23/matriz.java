@@ -68,8 +68,97 @@ public class matriz {
         }
         return null;
     }
+    public void graficar2(){
+        String contenido="";
+        contenido="digraph G {\n";
+        contenido += "node[shape=record, style=filled];\n";
+        contenido+= "graph[pencolor=transparent]\n";
+        contenido += "edge[color=black];\n";
+        mnodo aux1=null,aux2=null;
+        int mcont=0;
+        if(inicio!=null){
+            aux1=inicio.abajo;
+            while(aux1!=null){
+                if(aux1.carpeta.equals("raiz")){
+                    contenido += "nd" + aux1.carpeta + " [label = \"\\\\\",fillcolor = yellow];\n";
+                }else{
+                    contenido += "nd" + aux1.carpeta + " [label = \""+aux1.carpeta+"\",fillcolor = orangered];\n";
+                }
+                
+                aux2=aux1;
+                mcont=0;
+                while(aux2.der!=null){
+                    if(aux2.der.carpeta.equals("raiz")){
+                        
+                    }else{
+                        mcont++;
+                        if(aux1.carpeta.equals("raiz")){
+                            contenido += "nd" + aux1.carpeta + " [label = \"\\\\ \\n Carpetas: "+mcont+"\",fillcolor =yellow];\n";
+                        }else{
+                            contenido += "nd" + aux1.carpeta + " [label = \""+aux1.carpeta+"\\n Carpetas: "+mcont+"\",fillcolor = orangered];\n";
+                        }
+                                
+                        
+                        contenido += "nd" + aux1.carpeta+"->nd" + aux2.der.carpeta+";\n";
+                    }
+                    
+                    aux2=aux2.der;
+                }
+                aux1=aux1.abajo;
+            }
+            contenido += "}";
+            
+            FileWriter fw = null;
+    				PrintWriter pw = null;
+        			try{
+            			fw = new FileWriter("grafo.txt");
+            			pw = new PrintWriter(fw);
+
+                                
+                                pw.println(contenido);
+                                    	
+                                
+            			pw.close();
+            			fw.close();
+            
+            			
+        			} catch(IOException v){
+            			
+        			} finally {
+                
+        			}
+    contenido="";
+    try {
+      
+                    String dotPath = "C:\\Program Files (x86)\\Graphviz2.38\\bin\\twopi.exe";
+                     System.out.println("d");
+                    String fileInputPath = "C:\\Users\\Julio Garcia\\Documents\\NetBeansProjects\\EDDproyecto23\\grafo.txt";
+                    System.out.println("d");
+                    String fileOutputPath = "C:\\Users\\Julio Garcia\\Documents\\NetBeansProjects\\EDDproyecto23\\grafo.png";
+      
+                    String tParam = "-Tpng";
+                    String tOParam = "-o";
+        
+                    String[] cmd = new String[5];
+                    cmd[0] = dotPath;
+                    cmd[1] = tParam;
+                    cmd[2] = fileInputPath;
+                    cmd[3] = tOParam;
+                    cmd[4] = fileOutputPath;
+                  
+                    Runtime rt = Runtime.getRuntime();
+      
+                    rt.exec( cmd );
+      
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                } finally {
+                }
+        }
+        
+        
+    }
     public void graficar(){
-        System.out.println("llego");
         int contx=0;
         int conty=0;
         mnodo aux1= null;
@@ -86,15 +175,15 @@ public class matriz {
                 contx++;
                 contenido+= "MATRIZ ->ndC"+aux1.carpeta+";\n";
                 if(aux1.carpeta.equals("raiz")){
-                    contenido += "ndC" + aux1.carpeta + " [label = \"\\\\\",fillcolor = orangered, pos=\""+(aux1.x*1.3)+",0!\"];\n";
+                    contenido += "ndC" + aux1.carpeta + " [label = \"\\\\\",fillcolor = orangered, pos=\""+(aux1.x*1.5)+",0!\"];\n";
                 }else{
-                    contenido += "ndC" + aux1.carpeta + " [label = \""+aux1.carpeta+"\",fillcolor = orangered, pos=\""+(aux1.x*1.3)+",0!\"];\n";
+                    contenido += "ndC" + aux1.carpeta + " [label = \""+aux1.carpeta+"\",fillcolor = orangered, pos=\""+(aux1.x*1.5)+",0!\"];\n";
                 }
                 contx++;
                 while(aux1.der!=null){
                     
                     contenido += "ndC" + aux1.carpeta + "->" + "ndC" +aux1.der.carpeta+"[dir=both];\n";
-                    contenido += "ndC" + aux1.der.carpeta + " [label = \"" + aux1.der.carpeta +"\",fillcolor = orangered, pos=\""+(aux1.der.x*1.3)+",0!\"];\n";
+                    contenido += "ndC" + aux1.der.carpeta + " [label = \"" + aux1.der.carpeta +"\",fillcolor = orangered, pos=\""+(aux1.der.x*1.5)+",0!\"];\n";
                     contx++;
                     aux1 = aux1.der;
                 }
@@ -131,15 +220,15 @@ public class matriz {
                     if(aux1.der!=null){
                         contenido += "ndF" +aux1.carpeta + "-> nd" +aux1.der.carpeta+"F"+aux1.der.padre+ "[dir=both];\n";
                         if(aux1.der.carpeta.equals("raiz")){
-                            contenido += "nd" +aux1.der.carpeta +"F"+aux1.der.padre + "[label = \"\\\\\",fillcolor=gold, pos=\""+(aux1.der.x*1.3)+",-"+aux1.der.y+"!\" ];\n";
+                            contenido += "nd" +aux1.der.carpeta +"F"+aux1.der.padre + "[label = \"\\\\\",fillcolor=gold, pos=\""+(aux1.der.x*1.5)+",-"+aux1.der.y+"!\" ];\n";
                         }else{
-                            contenido += "nd" +aux1.der.carpeta +"F"+aux1.der.padre + "[label = \"" +aux1.der.padre+"\\\\"+aux1.der.carpeta + "\",fillcolor=gold, pos=\""+(aux1.der.x*1.3)+",-"+aux1.der.y+"!\" ];\n";
+                            contenido += "nd" +aux1.der.carpeta +"F"+aux1.der.padre + "[label = \"" +aux1.der.padre+"\\\\"+aux1.der.carpeta + "\",fillcolor=gold, pos=\""+(aux1.der.x*1.5)+",-"+aux1.der.y+"!\" ];\n";
                         }
                         contx++;
                         aux1=aux1.der;
                         while(aux1.der!=null){
                             contenido += "nd" + aux1.carpeta +"F"+aux1.padre + " -> nd" + aux1.der.carpeta+"F"+aux1.der.padre+ "[dir=both];\n";
-                            contenido += "nd" +aux1.der.carpeta +"F"+aux1.der.padre + "[label = \"" +aux1.der.padre+"\\\\"+aux1.der.carpeta+ "\",fillcolor=gold,  pos=\""+(aux1.der.x*1.3)+",-"+aux1.der.y+"!\"];\n";
+                            contenido += "nd" +aux1.der.carpeta +"F"+aux1.der.padre + "[label = \"" +aux1.der.padre+"\\\\"+aux1.der.carpeta+ "\",fillcolor=gold,  pos=\""+(aux1.der.x*1.5)+",-"+aux1.der.y+"!\"];\n";
                             contx++;
                             aux1 = aux1.der;
                         }
