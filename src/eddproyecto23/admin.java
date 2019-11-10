@@ -84,6 +84,7 @@ public class admin extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e){
                 String hola="";
+                int acont=0;
                 try{
                     CsvReader ag = new CsvReader(txtcsv.getText());
                     ag.readHeaders();
@@ -92,6 +93,7 @@ public class admin extends JFrame {
                      
                         String nombre = ag.get(0);
                         String codigo = ag.get(1);
+                        acont++;
                         if(codigo.length()<8){
                             System.out.println("La contraseña tiene menos de 8 digitos");
                           
@@ -116,7 +118,9 @@ public class admin extends JFrame {
                     }
              
                     ag.close();
-                    EDDproyecto23.lol.graficar();
+                    Timestamp timestamp2 = new Timestamp(System.currentTimeMillis());
+                    EDDproyecto23.reg.insertar("Registro "+acont+" usuarios","Fecha: "+timestamp2.toString(),"Usuario: admin");
+                    //EDDproyecto23.lol.graficar();
                     EDDproyecto23.lol.graficar2();
                 } catch (FileNotFoundException ev) {
                     ev.printStackTrace();

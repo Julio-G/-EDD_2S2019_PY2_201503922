@@ -54,6 +54,7 @@ public class cmasiva extends JFrame {
                 }
                 cinicio=cinicio.abajo;
                 String hola="";
+                int acont=0;
                 try{
                     CsvReader ag = new CsvReader(txtcsv.getText());
                     ag.readHeaders();
@@ -62,7 +63,7 @@ public class cmasiva extends JFrame {
                      
                         String nombre = ag.get(0);
                         String codigo = ag.get(1);
-                        
+                        acont++;
                         int cont=0;
                         char simbolo;
                         int ascii=0;
@@ -75,6 +76,9 @@ public class cmasiva extends JFrame {
                         cinicio.arbol.inicio=cinicio.arbol.insertar(cinicio.arbol.inicio,ascii,nombre,codigo,timestamp.toString());
                     }   
                     ag.close();
+                    Timestamp timestamp2 = new Timestamp(System.currentTimeMillis());
+                    EDDproyecto23.reg.insertar("Creo "+acont+" Archivos",timestamp2.toString(),EDDproyecto23.hnom);
+                
                 } catch (FileNotFoundException ev) {
                     ev.printStackTrace();
                 } catch (IOException ev) {

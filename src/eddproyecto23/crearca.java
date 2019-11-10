@@ -14,6 +14,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import java.sql.Timestamp;
 public class crearca extends JFrame{
     JLabel lbbienvenida;
     JButton btningresar;
@@ -43,6 +44,8 @@ public class crearca extends JFrame{
             public void actionPerformed(ActionEvent e){
                 avl ar= new avl();
                 EDDproyecto23.rese.insertar(usuario.donde.carpeta,txtcsv.getText(),ar);
+                Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+                EDDproyecto23.reg.insertar("Creo la carpeta: "+txtcsv.getText(),timestamp.toString(),EDDproyecto23.hnom);
                 usuario pos = new usuario();
                 pos.setVisible(true);
                 setVisible(false);

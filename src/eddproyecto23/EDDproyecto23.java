@@ -27,6 +27,7 @@ public class EDDproyecto23 extends JFrame{
     public static matriz rese;
     public static String hnom;
     public static String carp="raiz";
+    public static bita reg= new bita();
 
    public EDDproyecto23(){
         super("EDD drive");

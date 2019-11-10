@@ -1,0 +1,6 @@
+digraph G { 
+rankdir=LR 
+ label="Bitacora" 
+ node [shape=record,width=.01,height=.2, style=filled,fillcolor=cyan]
+node0 [label = "Usuario: Usuario: admin Descripcion: Registro 6 usuarios Timestamp: Fecha: 2019-11-10 17:18:25.001|",height=.5];
+}

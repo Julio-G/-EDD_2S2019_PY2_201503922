@@ -122,19 +122,19 @@ public class hash {
   public void graficar2(){
       int cont=0;
       run+="digraph G { \n";
-      run+="rankdir=LR \n label=\"Tabla hash\" \n node [shape=record,width=.01,height=.2, style=filled,fillcolor=cyan]\n";
-      run+="node0 [label = \"";
-       for(int i=0;i<vectorh.length;i++){
+      run+="label=\"Tabla hash\" \n node [shape=record,width=.01,height=.2, style=filled,fillcolor=cyan]\n";
+      run+="node0 [label = \"{<inicio>Inicio";
+      for(int i=0;i<vectorh.length;i++){
           if(vectorh[i]!=null){
-             run+=cont+")       Nombre: "+vectorh[i].nombre+"  Contraseña:"+vectorh[i].contraseña+"  Encriptada: "+vectorh[i].encrip+"  Timestamp: "+vectorh[i].tiempo+"|";
+             run+="|<hash"+cont+">"+cont+")       Nombre: "+vectorh[i].nombre+"  Contraseña:"+vectorh[i].contraseña+"  Encriptada: "+vectorh[i].encrip+"  Timestamp: "+vectorh[i].tiempo;
           }else{
-              run+=cont+") -----|";
+             run+="|<hash"+cont+">"+cont+") -----";
               
           }
           cont++;
          
       }
-      run+="\",height=.5];\n";
+      run+="}\",height=.5];\n";
       run+="}";
       FileWriter fw = null;
     				PrintWriter pw = null;

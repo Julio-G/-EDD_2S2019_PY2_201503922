@@ -18,8 +18,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 public class reportes extends JFrame{
-    JButton btnhash,btnmatriz,btnavl,btngrafo;
-    JLabel lbhash,lbimagen,lbmatriz,lbavl,lbgrafo;
+    JButton btnhash,btnmatriz,btnavl,btngrafo,btnbita;
+    JLabel lbhash,lbimagen,lbmatriz,lbavl,lbgrafo,lbbita;
     public reportes(){
         super("EDD drive");
         setSize(1200,700);
@@ -159,6 +159,37 @@ public class reportes extends JFrame{
             }
 
         });
+        lbbita=new JLabel ("Bitacora");
+	lbbita.setFont(fuente); 
+        lbbita.setBounds(15,425,300,50);
+        btnbita = new JButton("Bitacora");
+	btnbita.setBounds(15,485,110,30);
+	btnbita.setBackground(Color.white);
+        btnbita.addActionListener(new ActionListener()
+	{
+            @Override
+            public void actionPerformed(ActionEvent e){
+               EDDproyecto23.reg.graficar();
+               
+                try {
+                    Thread.sleep(1);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(reportes.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                
+                
+                ImageIcon icon= new ImageIcon("bita.png");
+                Image img = icon.getImage() ;  
+                Image newimg = img.getScaledInstance( 950, 620, java.awt.Image.SCALE_SMOOTH ) ; 
+                icon = new ImageIcon( newimg );
+                lbimagen.setIcon(icon);
+                lbimagen.setBounds(200,10,950,620);
+                lbimagen.setVisible(true);
+                lbimagen.repaint();
+            }
+
+        });
         add(lbhash);
         add(lbimagen);
         add(btnhash);
@@ -168,6 +199,8 @@ public class reportes extends JFrame{
         add(btnavl);
         add(lbgrafo);
         add(btngrafo);
+        add(lbbita);
+        add(btnbita);
         
         
         
