@@ -84,7 +84,8 @@ public class EDDproyecto23 extends JFrame{
 	{
             @Override
             public void actionPerformed(ActionEvent e){
-                
+                usuin jk =new usuin();
+                jk.setVisible(true);
             }
         });
         add(lbbienvenida);

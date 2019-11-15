@@ -119,7 +119,7 @@ public class admin extends JFrame {
              
                     ag.close();
                     Timestamp timestamp2 = new Timestamp(System.currentTimeMillis());
-                    EDDproyecto23.reg.insertar("Registro "+acont+" usuarios","Fecha: "+timestamp2.toString(),"Usuario: admin");
+                    EDDproyecto23.reg.insertar("Registro "+acont+" usuarios",timestamp2.toString(),"admin");
                     //EDDproyecto23.lol.graficar();
                     EDDproyecto23.lol.graficar2();
                 } catch (FileNotFoundException ev) {
