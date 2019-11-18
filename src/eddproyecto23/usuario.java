@@ -199,7 +199,7 @@ public class usuario extends JFrame{
             {
                 @Override
                 public void actionPerformed(ActionEvent e){
-                    
+                     JOptionPane.showMessageDialog(null,pal.contenido);
                 }
             });
             panel.add(boton);

@@ -4,12 +4,9 @@ graph[pencolor=transparent]
 edge[color=black];
 ndraiz [label = "\\",fillcolor = yellow];
 ndraiz [label = "\\ \n Carpetas: 1",fillcolor =yellow];
-ndraiz->nddol;
-ndraiz [label = "\\ \n Carpetas: 2",fillcolor =yellow];
-ndraiz->ndpe;
-nddol [label = "dol",fillcolor = orangered];
-nddol [label = "dol\n Carpetas: 1",fillcolor = orangered];
-nddol->ndbal;
-ndpe [label = "pe",fillcolor = orangered];
-ndbal [label = "bal",fillcolor = orangered];
+ndraiz->ndkes;
+ndkes [label = "kes",fillcolor = orangered];
+ndkes [label = "kes\n Carpetas: 1",fillcolor = orangered];
+ndkes->nddorian;
+nddorian [label = "dorian",fillcolor = orangered];
 }

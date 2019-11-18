@@ -5,33 +5,26 @@ edge[color=black];
 MATRIZ[label="Matriz",pos="0,0!"];
 MATRIZ ->ndCraiz;
 ndCraiz [label = "\\",fillcolor = orangered, pos="1.5,0!"];
-ndCraiz->ndCdol[dir=both];
-ndCdol [label = "dol",fillcolor = orangered, pos="3.0,0!"];
-ndCdol->ndCpe[dir=both];
-ndCpe [label = "pe",fillcolor = orangered, pos="4.5,0!"];
-ndCpe->ndCbal[dir=both];
-ndCbal [label = "bal",fillcolor = orangered, pos="6.0,0!"];
+ndCraiz->ndCkes[dir=both];
+ndCkes [label = "kes",fillcolor = orangered, pos="3.0,0!"];
+ndCkes->ndCdorian[dir=both];
+ndCdorian [label = "dorian",fillcolor = orangered, pos="4.5,0!"];
 
 MATRIZ ->ndFraiz;
 ndFraiz [label = "\\",fillcolor = orangered, pos="0,-1!"];
-ndFraiz->ndFdol[dir=both];
-ndFdol [label = "dol",fillcolor = orangered, pos="0,-2!"];
-ndFdol->ndFpe[dir=both];
-ndFpe [label = "pe",fillcolor = orangered, pos="0,-3!"];
-ndFpe->ndFbal[dir=both];
-ndFbal [label = "bal",fillcolor = orangered, pos="0,-4!"];
+ndFraiz->ndFkes[dir=both];
+ndFkes [label = "kes",fillcolor = orangered, pos="0,-2!"];
+ndFkes->ndFdorian[dir=both];
+ndFdorian [label = "dorian",fillcolor = orangered, pos="0,-3!"];
 
 ndFraiz-> ndraizFnada[dir=both];
 ndraizFnada[label = "\\",fillcolor=gold, pos="1.5,-1!" ];
-ndraizFnada -> nddolFraiz[dir=both];
-nddolFraiz[label = "raiz\\dol",fillcolor=gold,  pos="3.0,-1!"];
-nddolFraiz -> ndpeFraiz[dir=both];
-ndpeFraiz[label = "raiz\\pe",fillcolor=gold,  pos="4.5,-1!"];
-ndFdol-> ndbalFdol[dir=both];
-ndbalFdol[label = "dol\\bal",fillcolor=gold, pos="6.0,-2!" ];
+ndraizFnada -> ndkesFraiz[dir=both];
+ndkesFraiz[label = "raiz\\kes",fillcolor=gold,  pos="3.0,-1!"];
+ndFkes-> nddorianFkes[dir=both];
+nddorianFkes[label = "kes\\dorian",fillcolor=gold, pos="4.5,-2!" ];
 ndCraiz-> ndraizFnada[dir=both];
-ndCdol-> nddolFraiz[dir=both];
-ndCpe-> ndpeFraiz[dir=both];
-ndCbal-> ndbalFdol[dir=both];
+ndCkes-> ndkesFraiz[dir=both];
+ndCdorian-> nddorianFkes[dir=both];
 
  }

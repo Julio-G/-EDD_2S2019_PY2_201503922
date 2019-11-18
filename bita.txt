@@ -2,5 +2,5 @@ digraph G {
 rankdir=LR 
  label="Bitacora" 
  node [shape=record,width=.01,height=.2, style=filled,fillcolor=cyan]
-node0 [label = "Usuario: Usuario: Descripcion: Se creo un usuario Timestamp: Fecha: 2019-11-15 00:03:51.123|",height=.5];
+node0 [label = "Usuario: hola Descripcion: Creo la carpeta: dorian Timestamp: 2019-11-16 11:31:07.578|Usuario: hola Descripcion: Creo 5 Archivos Timestamp: 2019-11-16 11:31:01.565|Usuario: hola Descripcion: Creo la carpeta: kes Timestamp: 2019-11-16 11:30:54.951|Usuario: bol Descripcion: Creo 4 Archivos Timestamp: 2019-11-16 11:30:36.986|Usuario: bol Descripcion: Creo la carpeta: bolca1 Timestamp: 2019-11-16 11:30:33.532|Usuario: bol Descripcion: Creo la carpeta: shiro Timestamp: 2019-11-16 11:30:28.607|Usuario: bol Descripcion: Creo la carpeta: bolca Timestamp: 2019-11-16 11:30:24.279|Usuario: admin Descripcion: Registro 6 usuarios Timestamp: 2019-11-16 11:29:31.534|Usuario:   Descripcion: Se creo un usuario Timestamp: 2019-11-16 11:29:17.892|",height=.5];
 }

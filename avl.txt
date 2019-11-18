@@ -1,14 +1,9 @@
 digraph G {  node [shape=record, color=blue]
- nodeHeaderh735 [fillcolor=blue label="<C0>|Nombre:Header.h\n contenido:cabecera\n Altura: 3\n FE : -1\n Propietario: dol\n Timestamp: 2019-11-12 17:35:47.95|<C1>"] nodeHeaderh735:C0->nodeMainpy668:C1
- nodeMainpy668 [fillcolor=blue label="<C0>|Nombre:Main.py\n contenido:python script\n Altura: 1\n FE : -1\n Propietario: dol\n Timestamp: 2019-11-12 17:35:47.95|<C1>"] nodeMainpy668:C1->nodeMain2py718:C0
- nodeMain2py718 [style=filled fillcolor=blue  label="Nombre: Main2.py\n contenido:python script2\n Altura: 0\n FE : 0\n Propietario: dol\n Timestamp: 2019-11-12 17:37:29.22"]
- nodeHeaderh735 [fillcolor=blue label="<C0>|Nombre:Header.h\n contenido:cabecera\n Altura: 3\n FE : -1\n Propietario: dol\n Timestamp: 2019-11-12 17:35:47.95|<C1>"] nodeHeaderh735:C1->nodechromeexe1006:C0
- nodechromeexe1006 [fillcolor=blue label="<C0>|Nombre:chrome.exe\n contenido:ejecutable\n Altura: 2\n FE : -1\n Propietario: dol\n Timestamp: 2019-11-12 17:35:47.951|<C1>"] nodechromeexe1006:C0->nodeholatxt818:C1
- nodeholatxt818 [fillcolor=blue label="<C0>|Nombre:hola.txt\n contenido:hola mundo\n Altura: 1\n FE : -2\n Propietario: dol\n Timestamp: 2019-11-12 17:35:47.95|<C1>"] nodeholatxt818:C0->nodeHeader2h785:C1
- nodeHeader2h785 [style=filled fillcolor=blue  label="Nombre: Header2.h\n contenido:cabecera2\n Altura: 0\n FE : 0\n Propietario: dol\n Timestamp: 2019-11-12 17:37:29.22"]
- nodeholatxt818 [fillcolor=blue label="<C0>|Nombre:hola.txt\n contenido:hola mundo\n Altura: 1\n FE : -2\n Propietario: dol\n Timestamp: 2019-11-12 17:35:47.95|<C1>"] nodeholatxt818:C1->nodehola2txt868:C0
- nodehola2txt868 [style=filled fillcolor=blue  label="Nombre: hola2.txt\n contenido:hola mundo2\n Altura: 0\n FE : 0\n Propietario: dol\n Timestamp: 2019-11-12 17:37:29.22"]
- nodechromeexe1006 [fillcolor=blue label="<C0>|Nombre:chrome.exe\n contenido:ejecutable\n Altura: 2\n FE : -1\n Propietario: dol\n Timestamp: 2019-11-12 17:35:47.951|<C1>"] nodechromeexe1006:C1->nodechrome2exe1056:C0
- nodechrome2exe1056 [fillcolor=blue label="<C0>|Nombre:chrome2.exe\n contenido:ejecutable2\n Altura: 1\n FE : -1\n Propietario: dol\n Timestamp: 2019-11-12 17:37:29.221|<C1>"] nodechrome2exe1056:C1->nodechrome3exe1057:C0
- nodechrome3exe1057 [style=filled fillcolor=blue  label="Nombre: chrome3.exe\n contenido:ejecutable3\n Altura: 0\n FE : 0\n Propietario: dol\n Timestamp: 2019-11-12 17:37:29.221"]
+ nodeHeader2h785 [fillcolor=blue label="<C0>|Nombre:Header2.h\n contenido:cabecera2\n Altura: 2\n FE : -1\n Propietario: raiz\n Timestamp: 2019-11-16 11:31:01.564|<C1>"] nodeHeader2h785:C0->nodeMain2py718:C1
+ nodeMain2py718 [style=filled fillcolor=blue  label="Nombre: Main2.py\n contenido:python script2\n Altura: 0\n FE : -2\n Propietario: raiz\n Timestamp: 2019-11-16 11:31:01.564"]
+ nodeHeader2h785 [fillcolor=blue label="<C0>|Nombre:Header2.h\n contenido:cabecera2\n Altura: 2\n FE : -1\n Propietario: raiz\n Timestamp: 2019-11-16 11:31:01.564|<C1>"] nodeHeader2h785:C1->nodechrome2exe1056:C0
+ nodechrome2exe1056 [fillcolor=blue label="<C0>|Nombre:chrome2.exe\n contenido:ejecutable2\n Altura: 1\n FE : -1\n Propietario: raiz\n Timestamp: 2019-11-16 11:31:01.564|<C1>"] nodechrome2exe1056:C0->nodehola2txt868:C1
+ nodehola2txt868 [style=filled fillcolor=blue  label="Nombre: hola2.txt\n contenido:hola mundo2\n Altura: 0\n FE : -2\n Propietario: raiz\n Timestamp: 2019-11-16 11:31:01.564"]
+ nodechrome2exe1056 [fillcolor=blue label="<C0>|Nombre:chrome2.exe\n contenido:ejecutable2\n Altura: 1\n FE : -1\n Propietario: raiz\n Timestamp: 2019-11-16 11:31:01.564|<C1>"] nodechrome2exe1056:C1->nodechrome3exe1057:C0
+ nodechrome3exe1057 [style=filled fillcolor=blue  label="Nombre: chrome3.exe\n contenido:ejecutable3\n Altura: 0\n FE : 0\n Propietario: raiz\n Timestamp: 2019-11-16 11:31:01.565"]
 }
